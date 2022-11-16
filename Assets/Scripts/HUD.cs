@@ -25,7 +25,7 @@ public class HUD : MonoBehaviour
     private void Awake()
     {
         p_Time = 0;
-        m_TimeText.text = "Time: " + p_Time + "s";
+        m_TimeText.text = "Time: " + p_Time.ToString("0000.00");
         //m_TimeText.gameObject.SetActive(false);
         m_WinText.gameObject.SetActive(false);
         won = false;
@@ -36,7 +36,7 @@ public class HUD : MonoBehaviour
         if (!won)
         {
             p_Time += Time.deltaTime;
-            m_TimeText.text = "Time: " + p_Time + "s";
+            m_TimeText.text = "Time: " + p_Time.ToString("0000.00");
         }
     }
 
@@ -45,7 +45,7 @@ public class HUD : MonoBehaviour
     {
         ShowCowsRemaining("Cows Remaining: 0!");
         won = true;
-        m_TimeText.text = "Time: " + p_Time + "s";
+        m_TimeText.text = "Time: " + p_Time.ToString("0000.00");
         //m_TimeText.gameObject.SetActive(true);
         m_WinText.gameObject.SetActive(true);
         Button button = GameObject.Find("Canvas").GetComponent<GameManager>().button;
